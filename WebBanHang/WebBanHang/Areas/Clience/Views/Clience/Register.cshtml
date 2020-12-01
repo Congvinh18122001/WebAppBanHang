@@ -1,0 +1,107 @@
+﻿@using CaptchaMvc.HtmlHelpers;
+@using CaptchaMvc;
+@using WebBanHang.Models;
+@model ThanhVien
+@{
+    ViewBag.Title = "Register";
+    Layout = "~/Areas/Clience/Views/Shared/_ProductLayoutPage.cshtml";
+}
+<style>
+    #MatKhau, #cauTraLoi, #TaiKhoan, #CauHoi, #CaptchaInputText, #NhapLaiMK {
+        width: 100%;
+        padding: 1em;
+        margin: 1em 0;
+        background: none;
+        outline: none;
+        border: 1px solid #A09F9F;
+    }
+    .field-validation-error,.text-danger {
+        color: red;
+    }
+</style>
+<div class=" container">
+    <div class=" register">
+        <h1>Register</h1>
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+            <hr />
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            <div class="col-md-6 register-top-grid">
+                <h3>Thông tin cá nhân</h3>
+                <div>
+                    <span>Họ tên : </span>
+                    @Html.TextBoxFor(model => model.HoTen)
+                    @Html.ValidationMessageFor(model => model.HoTen, "", new { @class="text-danger" })
+                </div>
+                <div>
+                    <span>Địa Chỉ </span>
+                    @Html.TextBoxFor(model => model.DiaChi)
+                    @Html.ValidationMessageFor(model => model.DiaChi, "", new { @class="text-danger" })
+                </div>
+                <div>
+                    <span>Số điện thoại </span>
+                    @Html.TextBoxFor(model => model.DienThoai)
+                    @Html.ValidationMessageFor(model => model.DienThoai, "", new { @class="text-danger" })
+                </div>
+                <div>
+                    <span>Email </span>
+                    @Html.TextBoxFor(model => model.Email)
+                    @Html.ValidationMessageFor(model => model.Email,"",new { @class="text-danger" })
+                </div>
+                <a class="news-letter" href="#">
+                    <label class="checkbox"><input type="checkbox" name="checkbox" checked=""><i> </i>Sign Up for Newsletter</label>
+                </a>
+            </div>
+            <div class="col-md-6 register-bottom-grid">
+                <h3>Thông tin tài khoản</h3>
+                <div>
+                    <span>Tài khoản</span>
+                    @Html.TextBoxFor(model => model.TaiKhoan)
+                    @Html.ValidationMessageFor(model => model.TaiKhoan, "", new { @class = "text-danger", @onkeyup = "checkPass()" })
+                </div>
+                <div>
+                    <span>Mật khẩu</span>
+                    @Html.TextBoxFor(model => model.MatKhau, "", new { @class = "text-danger" })
+                    @Html.ValidationMessageFor(model => model.MatKhau)
+                </div>
+                <div>
+                    <span>Nhập lại Mật khẩu</span>
+                    <input id="NhapLaiMK" onkeyup="checkPass()" />
+                    <span id="CheckMK" style="color:red;"></span>
+                </div>
+                <div>
+                    <span>Câu hỏi bí mật</span>
+                    @Html.DropDownList("CauHoi")
+                    
+                </div>
+                <div>
+                    <span>Câu trả lời</span>
+                    @Html.TextBoxFor(model => model.cauTraLoi)
+                    @Html.ValidationMessageFor(model => model.cauTraLoi, "", new { @class = "text-danger" })
+                </div>
+                <div>
+                    @Html.Captcha(4)
+                    @if (ViewBag.ThongBao != null)
+                    {
+                        <span style="color:red">@ViewBag.ThongBao</span>
+                    }
+                </div>
+                <input type="submit" value="Đăng ký">
+
+            </div>
+            <div class="clearfix"> </div>
+        }
+    </div>
+</div>
+<script type="text/javascript">
+   function checkPass() {
+        var pass = $("#MatKhau").val();
+        var repass = $("#NhapLaiMK").val();
+        if (pass != repass) {
+            $("#CheckMK").text("Nhập lại đúng mật khẩu !")
+        } else {
+            $("#CheckMK").text("")
+        }
+    }
+</script>

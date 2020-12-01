@@ -1,0 +1,77 @@
+﻿@using WebBanHang.Models;
+@model IEnumerable<SanPham>
+
+<div class=" h_menu4">
+    <ul class="memenu skyblue">
+        <li class="showhide" style="display: list-item;"><span class="title">MENU</span><span class="icon1"></span><span class="icon2"></span></li>
+        <li class="active grid" style="display: none;"><a class="color8" href="@Url.Action("Home","Clience")">Trang chủ</a></li>
+        @foreach (var gr in Model.Where(p => p.MaLoaiSP != null).GroupBy(p => p.LoaiSanPham))
+        {
+
+            <li style="display: none;">
+                @if (gr.Key != null)
+                {
+                    <a class="color1" href="@Url.Action("ShowWithTypeProduct","Product",new { MaLoaiSP =gr.Key.MaLoaiSP})">@gr.Key.TenLoai</a>
+                    <div class="mepanel">
+                        <div class="row">
+
+                            <div class="col1">
+                                <div class="h_nav">
+                                    <h4> Nhà cung cấp</h4>
+                                    @foreach (var grItem in gr.GroupBy(p => p.NhaCungCap))
+                                    {
+
+                                        if (grItem.Key != null)
+                                        {
+
+                                            <ul>
+
+                                                @foreach (var item in grItem.GroupBy(p => p.MaNCC))
+                                                {
+                                                    <li><a href="@Url.Action("ShowWithNCC","Product",new {MaNCC = item.ElementAt(0).MaNCC,MaLoaiSp = gr.Key.MaLoaiSP })">@item.ElementAt(0).NhaCungCap.TenNCC</a></li>
+                                                }
+
+
+                                            </ul>
+                                        }
+
+                                    }
+                                </div>
+                            </div>
+                            <div class="col1">
+                                <div class="h_nav">
+                                    <h4> Nhà sản xuất</h4>
+                                    @foreach (var grItem in gr.GroupBy(p => p.NhaSanXuat))
+                                    {
+
+                                        if (grItem.Key != null)
+                                        {
+                                            <ul>
+                                                @foreach (var item in grItem.GroupBy(p => p.MaNSX))
+                                                {
+                                                    <li><a href="@Url.Action("ShowWithNSX","Product",new {MaNSX = item.ElementAt(0).MaNSX,MaLoaiSp = gr.Key.MaLoaiSP })">@item.ElementAt(0).NhaSanXuat.TenNSX</a></li>
+                                                }
+                                            </ul>
+                                        }
+
+                                    }
+                                </div>
+                            </div>
+
+
+
+                        </div>
+                    </div>
+                }
+            </li>
+        }
+        <li style="display: none;"><a class="color4" href="">Giới thiệu</a></li>
+        <li style="display: none;"><a class="color6" href="">Liên hệ</a></li>
+        @if (Session["DangNhap"] != null && Session["DangNhap"] != "")
+        {
+            <li style="display: none;"><a class="color6" href="@Url.Action("PersonalInfor","Clience")">Thông tin cá nhân</a></li>
+            <li style="display: none;"><a class="color6" href="@Url.RouteUrl("HomeAdmin")">Admin</a></li>
+
+        }
+    </ul>
+</div>

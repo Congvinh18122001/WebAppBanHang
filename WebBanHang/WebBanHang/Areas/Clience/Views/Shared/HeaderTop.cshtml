@@ -1,0 +1,82 @@
+﻿@using WebBanHang.Models;
+<div class="header-top">
+    <div class="container">
+        <div class="search">
+            @using (Html.BeginForm("Search","Product")) {
+                <input type="text" placeholder="Search " name="strSearch" >
+                <input type="submit" value="Search">
+            }
+        </div>
+        <div class="header-left">
+            <ul>
+                @if (Session["DangNhap"] != null && Session["DangNhap"] != "")
+                {
+
+                    ThanhVien thanhVien = Session["DangNhap"] as ThanhVien;
+
+                    <li><span>Xin Chào <strong>@thanhVien.HoTen</strong></span></li>
+                    <li><a  href="@Url.RouteUrl("Logout")">Đăng Xuất</a></li>
+                }
+                else
+                {
+                    <li><span id="btn-login"> Đăng nhập </span></li>
+
+
+                    <li><a href="@Url.RouteUrl("Register")"> Đăng ký </a></li>
+                    }
+
+
+            </ul>
+            @Html.Action("CartPartial","Cart")
+            <div class="clearfix"> </div>
+        </div>
+        <div class="clearfix"> </div>
+    </div>
+</div>
+<link href="~/Content/Clience/css/login.css" rel="stylesheet" type="text/css" media="all">
+<div id="popup-login">
+            <div class="wrapper">
+                <div class="form-bg-blur">
+                    <div class="form-61">
+                        <button type="button" class="close" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                        <h4 class="form-head">Đăng nhập</h4>
+
+                        @using (Ajax.BeginForm("login", "Clience", new AjaxOptions{InsertionMode=InsertionMode.Replace,UpdateTargetId = "masage" }))
+                        {
+                            <div class="">
+                                <p class="text-head">Tài khoản </p>
+                                <input type="text" name="username" class="input" required="">
+                            </div>
+                            <div class="">
+                                <p class="text-head">Mật Khẩu</p>
+                                <input type="password" name="password" class="input" required="">
+                            </div>
+                        <h3 id="masage" style="color:red;font-weight:bold;text-align:left;"></h3>
+                            <label class="remember">
+                                <input  type="checkbox">
+                                <span class="checkmark"></span>Ghi nhớ đăng nhập
+                            </label>
+                            <button type="submit" class="signinbutton btn">Đăng nhập</button>
+                            <p class="signup">Quên mật khẩu?<a href="#forgot" class="signuplink">Click here</a></p>
+                        }
+                    </div>
+                </div>
+
+            </div>
+            <div class="copyright text-center">
+                <div class="wrapper">
+                    <p style="color:aliceblue" class="copy-footer-29">© 2020 Desk Login form. All rights reserved | Designed by <a href="https://w3layouts.com">W3layouts</a></p>
+                </div>
+            </div>
+        </div>
+<script type="text/javascript">
+    $("#btn-login").click(function () {
+        $("#popup-login").css("display", "block");
+    });
+
+    $(".close").click(function () {
+        $("#popup-login").css("display", "none");
+    });
+</script>

@@ -1,0 +1,73 @@
+﻿@using PagedList.Mvc;
+@model PagedList.IPagedList<WebBanHang.Models.SanPham>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayoutPage.cshtml";
+}
+
+<h2>Quản lý sản phẩm</h2>
+<hr />
+<p>
+    @Html.ActionLink("Thêm sản phẩm", "Create",new { },new {@class="btn btn-primary" })
+</p>
+<table style="background-color:white;" class="table table-bordered">
+    <tr>
+        <th>
+            Mã Sản Phẩm
+        </th>
+        <th>
+            Tên sản phảm
+        </th>
+        <th>
+            Hình ảnh
+        </th>
+        <th>
+            Số lượng
+        </th>
+
+        <th>
+            Lượt bình chọn
+        </th>
+
+        <th>
+            Đã bán
+        </th>
+
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @item.MaSP
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TenSP)
+        </td>
+        <td>
+            <img width="50px" height="50px" src="@item.HinhAnh" />
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SoLuongTon)
+        </td>
+
+        <td>
+            @Html.DisplayFor(modelItem => item.LuotBinhChon)
+        </td>
+
+        <td>
+            @Html.DisplayFor(modelItem => item.SoLanMua)
+        </td>
+
+        <td>
+            @Html.ActionLink("Sửa", "Edit", new { id=item.MaSP },new {@class= "btn" }) |
+            @Html.ActionLink("Chi tiết", "Details", new { id=item.MaSP }, new { @class = "btn btn-info" }) |
+            @Html.ActionLink("Xóa", "Delete", new { id=item.MaSP }, new { @class = "btn btn-default" })
+        </td>
+    </tr>
+}
+
+</table>
+
+@Html.PagedListPager(Model,page=>Url.Action("Index",new { page=page }))

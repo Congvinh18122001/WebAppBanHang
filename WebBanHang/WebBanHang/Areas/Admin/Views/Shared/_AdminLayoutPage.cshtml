@@ -1,0 +1,387 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    @Html.Partial("Head")
+    <style>
+        .body-content{
+            background-color:white;
+            padding:10px 20px 0px 10px;
+        }
+    </style>
+</head>
+<<body>
+    <div class="page-container">
+        <!--/content-inner-->
+        <div class="left-content">
+            <div class="mother-grid-inner">
+                <!--header start here-->
+                <div class="header-main fixed">
+                    <div class="logo-w3-agile">
+                        <h1><a href="index.html">Pooled</a></h1>
+                    </div>
+                    <div class="w3layouts-left">
+
+                        <!--search-box-->
+                        <div class="w3-search-box">
+                            <form action="#" method="post">
+                                <input type="text" placeholder="Search..." required="">
+                                <input type="submit" value="">
+                            </form>
+                        </div><!--//end-search-box-->
+                        <div class="clearfix"> </div>
+                    </div>
+                    <div class="w3layouts-right">
+                        <div class="profile_details_left">
+                            <!--notifications of menu start -->
+                            <ul class="nofitications-dropdown">
+                                <li class="dropdown head-dpdn">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="fa fa-envelope"></i><span class="badge">3</span></a>
+                                    <ul class="dropdown-menu">
+                                        <li>
+                                            <div class="notification_header">
+                                                <h3>You have 3 new messages</h3>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                <div class="user_img"><img src="images/in11.jpg" alt=""></div>
+                                                <div class="notification_desc">
+                                                    <p>Lorem ipsum dolor</p>
+                                                    <p><span>1 hour ago</span></p>
+                                                </div>
+                                                <div class="clearfix"></div>
+                                            </a>
+                                        </li>
+                                        <li class="odd">
+                                            <a href="#">
+                                                <div class="user_img"><img src="images/in10.jpg" alt=""></div>
+                                                <div class="notification_desc">
+                                                    <p>Lorem ipsum dolor </p>
+                                                    <p><span>1 hour ago</span></p>
+                                                </div>
+                                                <div class="clearfix"></div>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                <div class="user_img"><img src="images/in9.jpg" alt=""></div>
+                                                <div class="notification_desc">
+                                                    <p>Lorem ipsum dolor</p>
+                                                    <p><span>1 hour ago</span></p>
+                                                </div>
+                                                <div class="clearfix"></div>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <div class="notification_bottom">
+                                                <a href="#">See all messages</a>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="dropdown head-dpdn">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="fa fa-bell"></i><span class="badge blue">3</span></a>
+                                    <ul class="dropdown-menu">
+                                        <li>
+                                            <div class="notification_header">
+                                                <h3>You have 3 new notification</h3>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                <div class="user_img"><img src="images/in8.jpg" alt=""></div>
+                                                <div class="notification_desc">
+                                                    <p>Lorem ipsum dolor</p>
+                                                    <p><span>1 hour ago</span></p>
+                                                </div>
+                                                <div class="clearfix"></div>
+                                            </a>
+                                        </li>
+                                        <li class="odd">
+                                            <a href="#">
+                                                <div class="user_img"><img src="images/in6.jpg" alt=""></div>
+                                                <div class="notification_desc">
+                                                    <p>Lorem ipsum dolor</p>
+                                                    <p><span>1 hour ago</span></p>
+                                                </div>
+                                                <div class="clearfix"></div>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                <div class="user_img"><img src="images/in7.jpg" alt=""></div>
+                                                <div class="notification_desc">
+                                                    <p>Lorem ipsum dolor</p>
+                                                    <p><span>1 hour ago</span></p>
+                                                </div>
+                                                <div class="clearfix"></div>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <div class="notification_bottom">
+                                                <a href="#">See all notifications</a>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="dropdown head-dpdn">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="fa fa-tasks"></i><span class="badge blue1">9</span></a>
+                                    <ul class="dropdown-menu">
+                                        <li>
+                                            <div class="notification_header">
+                                                <h3>You have 8 pending task</h3>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                <div class="task-info">
+                                                    <span class="task-desc">Database update</span><span class="percentage">40%</span>
+                                                    <div class="clearfix"></div>
+                                                </div>
+                                                <div class="progress progress-striped active">
+                                                    <div class="bar yellow" style="width:40%;"></div>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                <div class="task-info">
+                                                    <span class="task-desc">Dashboard done</span><span class="percentage">90%</span>
+                                                    <div class="clearfix"></div>
+                                                </div>
+                                                <div class="progress progress-striped active">
+                                                    <div class="bar green" style="width:90%;"></div>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                <div class="task-info">
+                                                    <span class="task-desc">Mobile App</span><span class="percentage">33%</span>
+                                                    <div class="clearfix"></div>
+                                                </div>
+                                                <div class="progress progress-striped active">
+                                                    <div class="bar red" style="width: 33%;"></div>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                <div class="task-info">
+                                                    <span class="task-desc">Issues fixed</span><span class="percentage">80%</span>
+                                                    <div class="clearfix"></div>
+                                                </div>
+                                                <div class="progress progress-striped active">
+                                                    <div class="bar  blue" style="width: 80%;"></div>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <div class="notification_bottom">
+                                                <a href="#">See all pending tasks</a>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <div class="clearfix"> </div>
+                            </ul>
+                            <div class="clearfix"> </div>
+                        </div>
+                        <!--notification menu end -->
+
+                        <div class="clearfix"> </div>
+                    </div>
+                    @Html.Action("Profile", "Admin")
+
+                    <div class="clearfix"> </div>
+                </div>
+                <!--heder end here-->
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="index.html">Home</a> <i class="fa fa-angle-right"></i></li>
+                </ol>
+                <!--four-grids here-->
+                @*@Html.Action("Index","ThongKe")*@
+                <!--//four-grids here-->
+                <!--agileinfo-grap-->
+                @*<div class="agileinfo-grap">
+                    <div class="agileits-box">
+                        <header class="agileits-box-header clearfix">
+                            <h3>Statistics</h3>
+                            <div class="toolbar">
+                                <div class="pull-left">
+                                    <div class="btn-group">
+                                        <a href="#" class="btn btn-default btn-xs">Daily</a>
+                                        <a href="#" class="btn btn-default btn-xs active">Monthly</a>
+                                        <a href="#" class="btn btn-default btn-xs">Yearly</a>
+                                    </div>
+                                </div>
+                                <div class="pull-right">
+                                    <div class="btn-group">
+                                        <a aria-expanded="false" class="btn btn-default btn-xs dropdown-toggle" data-toggle="dropdown">
+                                            Export <i class="fa fa-angle-down"></i>
+                                        </a>
+                                        <ul class="dropdown-menu pull-right" role="menu">
+                                            <li><a href="#">Export as PDF</a></li>
+                                            <li><a href="#">Export as CSV</a></li>
+                                            <li><a href="#">Export as PNG</a></li>
+                                            <li class="divider"></li>
+                                            <li><a href="#">Separated link</a></li>
+                                        </ul>
+                                    </div>
+                                    <a href="#" class="btn btn-primary btn-xs"><i class="fa fa-cog"></i></a>
+                                </div>
+                            </div>
+                        </header>
+                        <div class="agileits-box-body clearfix">
+                            <div id="hero-area" style="position: relative; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);">
+                                <svg height="348" version="1.1" width="1223" xmlns="http://www.w3.org/2000/svg" style="overflow: hidden; position: relative; left: -0.05px; top: -0.775px;"><desc style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">Created with Raphaël 2.0.1</desc><defs style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></defs><text x="41.71875" y="330.375" text-anchor="end" font="10px &quot;Arial&quot;" stroke="none" fill="#888888" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: end; font: 12px sans-serif;" font-size="12px" font-family="sans-serif" font-weight="normal"><tspan dy="4.3984375" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">0</tspan></text><path fill="none" stroke="#dddddd" d="M46.71875,330.375H1213" stroke-width="0.5" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></path><text x="41.71875" y="250.28125" text-anchor="end" font="10px &quot;Arial&quot;" stroke="none" fill="#888888" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: end; font: 12px sans-serif;" font-size="12px" font-family="sans-serif" font-weight="normal"><tspan dy="4.3984375" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">5,000</tspan></text><path fill="none" stroke="#dddddd" d="M46.71875,250.28125H1213" stroke-width="0.5" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></path><text x="41.71875" y="170.18750000000003" text-anchor="end" font="10px &quot;Arial&quot;" stroke="none" fill="#888888" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: end; font: 12px sans-serif;" font-size="12px" font-family="sans-serif" font-weight="normal"><tspan dy="4.398437500000028" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">10,000</tspan></text><path fill="none" stroke="#dddddd" d="M46.71875,170.18750000000003H1213" stroke-width="0.5" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></path><text x="41.71875" y="90.09375000000003" text-anchor="end" font="10px &quot;Arial&quot;" stroke="none" fill="#888888" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: end; font: 12px sans-serif;" font-size="12px" font-family="sans-serif" font-weight="normal"><tspan dy="4.398437500000028" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">15,000</tspan></text><path fill="none" stroke="#dddddd" d="M46.71875,90.09375000000003H1213" stroke-width="0.5" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></path><text x="41.71875" y="10.000000000000057" text-anchor="end" font="10px &quot;Arial&quot;" stroke="none" fill="#888888" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: end; font: 12px sans-serif;" font-size="12px" font-family="sans-serif" font-weight="normal"><tspan dy="4.398437500000057" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">20,000</tspan></text><path fill="none" stroke="#dddddd" d="M46.71875,10.000000000000057H1213" stroke-width="0.5" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></path><text x="1169.06960054678" y="335.375" text-anchor="middle" font="10px &quot;Arial&quot;" stroke="none" fill="#888888" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font: 12px sans-serif;" font-size="12px" font-family="sans-serif" font-weight="normal" transform="matrix(1,0,0,1,0,6.8125)"><tspan dy="4.3984375" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">2016-05</tspan></text><text x="1082.6259113001215" y="335.375" text-anchor="middle" font="10px &quot;Arial&quot;" stroke="none" fill="#888888" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font: 12px sans-serif;" font-size="12px" font-family="sans-serif" font-weight="normal" transform="matrix(1,0,0,1,0,6.8125)"><tspan dy="4.3984375" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">2016-03</tspan></text><text x="997.5993317132443" y="335.375" text-anchor="middle" font="10px &quot;Arial&quot;" stroke="none" fill="#888888" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font: 12px sans-serif;" font-size="12px" font-family="sans-serif" font-weight="normal" transform="matrix(1,0,0,1,0,6.8125)"><tspan dy="4.3984375" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">2016-01</tspan></text><text x="911.1556424665857" y="335.375" text-anchor="middle" font="10px &quot;Arial&quot;" stroke="none" fill="#888888" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font: 12px sans-serif;" font-size="12px" font-family="sans-serif" font-weight="normal" transform="matrix(1,0,0,1,0,6.8125)"><tspan dy="4.3984375" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">2015-11</tspan></text><text x="824.7119532199271" y="335.375" text-anchor="middle" font="10px &quot;Arial&quot;" stroke="none" fill="#888888" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font: 12px sans-serif;" font-size="12px" font-family="sans-serif" font-weight="normal" transform="matrix(1,0,0,1,0,6.8125)"><tspan dy="4.3984375" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">2015-09</tspan></text><text x="736.8511543134873" y="335.375" text-anchor="middle" font="10px &quot;Arial&quot;" stroke="none" fill="#888888" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font: 12px sans-serif;" font-size="12px" font-family="sans-serif" font-weight="normal" transform="matrix(1,0,0,1,0,6.8125)"><tspan dy="4.3984375" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">2015-07</tspan></text><text x="650.4074650668286" y="335.375" text-anchor="middle" font="10px &quot;Arial&quot;" stroke="none" fill="#888888" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font: 12px sans-serif;" font-size="12px" font-family="sans-serif" font-weight="normal" transform="matrix(1,0,0,1,0,6.8125)"><tspan dy="4.3984375" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">2015-05</tspan></text><text x="563.9637758201701" y="335.375" text-anchor="middle" font="10px &quot;Arial&quot;" stroke="none" fill="#888888" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font: 12px sans-serif;" font-size="12px" font-family="sans-serif" font-weight="normal" transform="matrix(1,0,0,1,0,6.8125)"><tspan dy="4.3984375" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">2015-03</tspan></text><text x="480.3543058930741" y="335.375" text-anchor="middle" font="10px &quot;Arial&quot;" stroke="none" fill="#888888" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font: 12px sans-serif;" font-size="12px" font-family="sans-serif" font-weight="normal" transform="matrix(1,0,0,1,0,6.8125)"><tspan dy="4.3984375" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">2015-01</tspan></text><text x="393.9106166464156" y="335.375" text-anchor="middle" font="10px &quot;Arial&quot;" stroke="none" fill="#888888" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font: 12px sans-serif;" font-size="12px" font-family="sans-serif" font-weight="normal" transform="matrix(1,0,0,1,0,6.8125)"><tspan dy="4.3984375" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">2014-11</tspan></text><text x="307.46692739975697" y="335.375" text-anchor="middle" font="10px &quot;Arial&quot;" stroke="none" fill="#888888" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font: 12px sans-serif;" font-size="12px" font-family="sans-serif" font-weight="normal" transform="matrix(1,0,0,1,0,6.8125)"><tspan dy="4.3984375" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">2014-09</tspan></text><text x="219.60612849331713" y="335.375" text-anchor="middle" font="10px &quot;Arial&quot;" stroke="none" fill="#888888" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font: 12px sans-serif;" font-size="12px" font-family="sans-serif" font-weight="normal" transform="matrix(1,0,0,1,0,6.8125)"><tspan dy="4.3984375" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">2014-07</tspan></text><text x="133.16243924665855" y="335.375" text-anchor="middle" font="10px &quot;Arial&quot;" stroke="none" fill="#888888" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font: 12px sans-serif;" font-size="12px" font-family="sans-serif" font-weight="normal" transform="matrix(1,0,0,1,0,6.8125)"><tspan dy="4.3984375" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">2014-05</tspan></text><text x="46.71875" y="335.375" text-anchor="middle" font="10px &quot;Arial&quot;" stroke="none" fill="#888888" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font: 12px sans-serif;" font-size="12px" font-family="sans-serif" font-weight="normal" transform="matrix(1,0,0,1,0,6.8125)"><tspan dy="4.3984375" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">2014-03</tspan></text><path fill="#f88d89" stroke="none" d="M46.71875,287.636975C79.31227217496962,235.12751250000002,144.49931652490886,98.127153125,177.09283869987848,77.59912500000002C209.6863608748481,57.071096875000016,274.87340522478735,109.29961851092898,307.46692739975697,123.41275000000002C339.70617215978126,137.372477885929,404.1846616798299,185.66240901243094,436.4239064398542,189.89056250000002C468.30887378493316,194.07225276243096,532.0788084750911,158.85423437500003,563.9637758201701,157.05212500000002C596.5572979951397,155.20996875000003,661.744342345079,163.3194609375,694.3378645200486,175.3135C726.9313866950182,187.3075390625,792.1184310449574,263.88221915983604,824.7119532199271,253.0044375C856.9511979799514,242.24489259733605,921.4296875,100.51194453125004,953.6689322600243,88.76419375000003C985.9081770200487,77.01644296875004,1050.3866665400972,145.79753069501368,1082.6259113001215,159.02243125C1115.2194334750911,172.39266038251367,1180.4064778250304,186.11414218750002,1213,195.14471250000003L1213,330.375L46.71875,330.375Z" fill-opacity="0.85" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); fill-opacity: 0.85;"></path><path fill="none" stroke="#ff4a43" d="M46.71875,287.636975C79.31227217496962,235.12751250000002,144.49931652490886,98.127153125,177.09283869987848,77.59912500000002C209.6863608748481,57.071096875000016,274.87340522478735,109.29961851092898,307.46692739975697,123.41275000000002C339.70617215978126,137.372477885929,404.1846616798299,185.66240901243094,436.4239064398542,189.89056250000002C468.30887378493316,194.07225276243096,532.0788084750911,158.85423437500003,563.9637758201701,157.05212500000002C596.5572979951397,155.20996875000003,661.744342345079,163.3194609375,694.3378645200486,175.3135C726.9313866950182,187.3075390625,792.1184310449574,263.88221915983604,824.7119532199271,253.0044375C856.9511979799514,242.24489259733605,921.4296875,100.51194453125004,953.6689322600243,88.76419375000003C985.9081770200487,77.01644296875004,1050.3866665400972,145.79753069501368,1082.6259113001215,159.02243125C1115.2194334750911,172.39266038251367,1180.4064778250304,186.11414218750002,1213,195.14471250000003" stroke-width="0" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></path><circle cx="46.71875" cy="287.636975" r="2" fill="#ff4a43" stroke="#ffffff" stroke-width="1" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></circle><circle cx="177.09283869987848" cy="77.59912500000002" r="2" fill="#ff4a43" stroke="#ffffff" stroke-width="1" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></circle><circle cx="307.46692739975697" cy="123.41275000000002" r="2" fill="#ff4a43" stroke="#ffffff" stroke-width="1" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></circle><circle cx="436.4239064398542" cy="189.89056250000002" r="2" fill="#ff4a43" stroke="#ffffff" stroke-width="1" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></circle><circle cx="563.9637758201701" cy="157.05212500000002" r="2" fill="#ff4a43" stroke="#ffffff" stroke-width="1" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></circle><circle cx="694.3378645200486" cy="175.3135" r="2" fill="#ff4a43" stroke="#ffffff" stroke-width="1" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></circle><circle cx="824.7119532199271" cy="253.0044375" r="2" fill="#ff4a43" stroke="#ffffff" stroke-width="1" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></circle><circle cx="953.6689322600243" cy="88.76419375000003" r="2" fill="#ff4a43" stroke="#ffffff" stroke-width="1" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></circle><circle cx="1082.6259113001215" cy="159.02243125" r="2" fill="#ff4a43" stroke="#ffffff" stroke-width="1" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></circle><circle cx="1213" cy="195.14471250000003" r="2" fill="#ff4a43" stroke="#ffffff" stroke-width="1" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></circle><path fill="#bbef0c" stroke="none" d="M46.71875,330.375C79.31227217496962,275.1143171875,144.49931652490886,131.30799140625,177.09283869987848,109.33226875000003C209.6863608748481,87.35654609375003,274.87340522478735,140.07557629781425,307.46692739975697,154.56921875000003C339.70617215978126,168.90532161031425,404.1846616798299,224.54856627244476,436.4239064398542,224.65125C468.30887378493316,224.75280533494475,532.0788084750911,160.1587943337912,563.9637758201701,155.386175C596.5572979951397,150.50749745879122,661.744342345079,171.79137734375,694.3378645200486,186.0460625C726.9313866950182,200.30074765625,792.1184310449574,269.35721782786885,824.7119532199271,269.42365625C856.9511979799514,269.48937251536887,921.4296875,187.90623984375003,953.6689322600243,186.57468125000003C985.9081770200487,185.24312265625002,1050.3866665400972,252.29116545423497,1082.6259113001215,258.7711875C1115.2194334750911,265.322418579235,1180.4064778250304,243.71756718749998,1213,238.69969375L1213,330.375L46.71875,330.375Z" fill-opacity="0.85" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); fill-opacity: 0.85;"></path><path fill="none" stroke="#a2d200" d="M46.71875,330.375C79.31227217496962,275.1143171875,144.49931652490886,131.30799140625,177.09283869987848,109.33226875000003C209.6863608748481,87.35654609375003,274.87340522478735,140.07557629781425,307.46692739975697,154.56921875000003C339.70617215978126,168.90532161031425,404.1846616798299,224.54856627244476,436.4239064398542,224.65125C468.30887378493316,224.75280533494475,532.0788084750911,160.1587943337912,563.9637758201701,155.386175C596.5572979951397,150.50749745879122,661.744342345079,171.79137734375,694.3378645200486,186.0460625C726.9313866950182,200.30074765625,792.1184310449574,269.35721782786885,824.7119532199271,269.42365625C856.9511979799514,269.48937251536887,921.4296875,187.90623984375003,953.6689322600243,186.57468125000003C985.9081770200487,185.24312265625002,1050.3866665400972,252.29116545423497,1082.6259113001215,258.7711875C1115.2194334750911,265.322418579235,1180.4064778250304,243.71756718749998,1213,238.69969375" stroke-width="0" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></path><circle cx="46.71875" cy="330.375" r="2" fill="#a2d200" stroke="#ffffff" stroke-width="1" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></circle><circle cx="177.09283869987848" cy="109.33226875000003" r="2" fill="#a2d200" stroke="#ffffff" stroke-width="1" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></circle><circle cx="307.46692739975697" cy="154.56921875000003" r="2" fill="#a2d200" stroke="#ffffff" stroke-width="1" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></circle><circle cx="436.4239064398542" cy="224.65125" r="2" fill="#a2d200" stroke="#ffffff" stroke-width="1" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></circle><circle cx="563.9637758201701" cy="155.386175" r="2" fill="#a2d200" stroke="#ffffff" stroke-width="1" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></circle><circle cx="694.3378645200486" cy="186.0460625" r="2" fill="#a2d200" stroke="#ffffff" stroke-width="1" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></circle><circle cx="824.7119532199271" cy="269.42365625" r="2" fill="#a2d200" stroke="#ffffff" stroke-width="1" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></circle><circle cx="953.6689322600243" cy="186.57468125000003" r="2" fill="#a2d200" stroke="#ffffff" stroke-width="1" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></circle><circle cx="1082.6259113001215" cy="258.7711875" r="2" fill="#a2d200" stroke="#ffffff" stroke-width="1" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></circle><circle cx="1213" cy="238.69969375" r="2" fill="#a2d200" stroke="#ffffff" stroke-width="1" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></circle><path fill="#5cc8ea" stroke="none" d="M46.71875,287.94133125C79.31227217496962,250.28925937500003,144.49931652490886,151.87206171875002,177.09283869987848,137.33304375000003C209.6863608748481,122.79402578125003,274.87340522478735,160.84603025956287,307.46692739975697,171.62918750000003C339.70617215978126,182.29513650956287,404.1846616798299,227.94151010013812,436.4239064398542,223.12946875C468.30887378493316,218.37030697513813,532.0788084750911,135.71286160714288,563.9637758201701,133.344375C596.5572979951397,130.92325535714286,661.744342345079,182.5419609375,694.3378645200486,203.97104375C726.9313866950182,225.40012656250002,792.1184310449574,299.3290868852459,824.7119532199271,304.7770375C856.9511979799514,310.1657712602459,921.4296875,248.1988125,953.6689322600243,247.31778125C985.9081770200487,246.43675,1050.3866665400972,290.98988319672134,1082.6259113001215,297.7287875C1115.2194334750911,304.5417456967213,1180.4064778250304,300.5761203125,1213,301.52523125L1213,330.375L46.71875,330.375Z" fill-opacity="0.85" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); fill-opacity: 0.85;"></path><path fill="none" stroke="#22beef" d="M46.71875,287.94133125C79.31227217496962,250.28925937500003,144.49931652490886,151.87206171875002,177.09283869987848,137.33304375000003C209.6863608748481,122.79402578125003,274.87340522478735,160.84603025956287,307.46692739975697,171.62918750000003C339.70617215978126,182.29513650956287,404.1846616798299,227.94151010013812,436.4239064398542,223.12946875C468.30887378493316,218.37030697513813,532.0788084750911,135.71286160714288,563.9637758201701,133.344375C596.5572979951397,130.92325535714286,661.744342345079,182.5419609375,694.3378645200486,203.97104375C726.9313866950182,225.40012656250002,792.1184310449574,299.3290868852459,824.7119532199271,304.7770375C856.9511979799514,310.1657712602459,921.4296875,248.1988125,953.6689322600243,247.31778125C985.9081770200487,246.43675,1050.3866665400972,290.98988319672134,1082.6259113001215,297.7287875C1115.2194334750911,304.5417456967213,1180.4064778250304,300.5761203125,1213,301.52523125" stroke-width="0" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></path><circle cx="46.71875" cy="287.94133125" r="2" fill="#22beef" stroke="#ffffff" stroke-width="1" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></circle><circle cx="177.09283869987848" cy="137.33304375000003" r="2" fill="#22beef" stroke="#ffffff" stroke-width="1" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></circle><circle cx="307.46692739975697" cy="171.62918750000003" r="2" fill="#22beef" stroke="#ffffff" stroke-width="1" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></circle><circle cx="436.4239064398542" cy="223.12946875" r="2" fill="#22beef" stroke="#ffffff" stroke-width="1" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></circle><circle cx="563.9637758201701" cy="133.344375" r="2" fill="#22beef" stroke="#ffffff" stroke-width="1" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></circle><circle cx="694.3378645200486" cy="203.97104375" r="2" fill="#22beef" stroke="#ffffff" stroke-width="1" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></circle><circle cx="824.7119532199271" cy="304.7770375" r="2" fill="#22beef" stroke="#ffffff" stroke-width="1" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></circle><circle cx="953.6689322600243" cy="247.31778125" r="2" fill="#22beef" stroke="#ffffff" stroke-width="1" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></circle><circle cx="1082.6259113001215" cy="297.7287875" r="2" fill="#22beef" stroke="#ffffff" stroke-width="1" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></circle><circle cx="1213" cy="301.52523125" r="2" fill="#22beef" stroke="#ffffff" stroke-width="1" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></circle></svg><div class="morris-hover morris-default-style" style="left: 230.467px; top: 65px; display: none;">
+                                    <div class="morris-hover-row-label">2014 Q3</div><div class="morris-hover-point" style="color: #ff4a43">
+                                        All Visitors:
+                                        12,920
+                                    </div><div class="morris-hover-point" style="color: #a2d200">
+                                        Returning Visitors:
+                                        10,975
+                                    </div><div class="morris-hover-point" style="color: #22beef">
+                                        Unique Visitors:
+                                        9,910
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>*@
+                <!--//agileinfo-grap-->
+                <!--photoday-section-->
+
+                <div class="body-content">
+                    @RenderBody()
+                </div>
+
+                <!--//photoday-section-->
+                <!--w3-agileits-pane-->
+                <!--//w3-agileits-pane-->
+                <!-- script-for sticky-nav -->
+                <script>
+                    $(document).ready(function () {
+                        var navoffeset = $(".header-main").offset().top;
+                        $(window).scroll(function () {
+                            var scrollpos = $(window).scrollTop();
+                            if (scrollpos >= navoffeset) {
+                                $(".header-main").addClass("fixed");
+                            } else {
+                                $(".header-main").removeClass("fixed");
+                            }
+                        });
+
+                    });
+                </script>
+                <!-- /script-for sticky-nav -->
+                <!--inner block start here-->
+                <div class="inner-block">
+
+                </div>
+                <!--inner block end here-->
+                <!--copy rights start here-->
+                <div class="copyrights">
+                    <p>© 2016 Pooled. All Rights Reserved | Design by  <a href="http://w3layouts.com/" target="_blank">W3layouts</a> </p>
+                </div>
+                <!--COPY rights end here-->
+            </div>
+        </div>
+        <!--//content-inner-->
+        <!--/sidebar-menu-->
+        <div class="sidebar-menu">
+            <header class="logo1">
+                <a href="#" class="sidebar-icon"> <span class="fa fa-bars"></span> </a>
+            </header>
+            <div style="border-top:1px ridge rgba(255, 255, 255, 0.15)"></div>
+            @Html.Partial("Menu")
+        </div>
+        <div class="clearfix"></div>
+    </div>
+    <script>
+        var toggle = true;
+
+        $(".sidebar-icon").click(function () {
+            if (toggle) {
+                $(".page-container").addClass("sidebar-collapsed").removeClass("sidebar-collapsed-back");
+                $("#menu span").css({ "position": "absolute" });
+            }
+            else {
+                $(".page-container").removeClass("sidebar-collapsed").addClass("sidebar-collapsed-back");
+                setTimeout(function () {
+                    $("#menu span").css({ "position": "relative" });
+                }, 400);
+            }
+
+            toggle = !toggle;
+        });
+    </script>
+    <!--js -->
+    <script src="~/Content/Admin/js/jquery.nicescroll.js"></script>
+    <script src="~/Content/Admin/js/scripts.js"></script><div id="ascrail2000" class="nicescroll-rails" style="width: 6px; z-index: 1000; background: rgb(255, 255, 255); cursor: default; position: fixed; top: 0px; height: 100%; right: 0px; opacity: 0;"><div style="position: relative; top: 0px; float: right; width: 6px; height: 94px; background-color: rgb(27, 147, 225); border: 0px; background-clip: padding-box; border-radius: 10px;"></div></div><div id="ascrail2000-hr" class="nicescroll-rails" style="height: 6px; z-index: 1000; background: rgb(255, 255, 255); position: fixed; left: 0px; width: 100%; bottom: 0px; cursor: default; display: none; opacity: 0;"><div style="position: relative; top: 0px; height: 6px; width: 1536px; background-color: rgb(27, 147, 225); border: 0px; background-clip: padding-box; border-radius: 10px;"></div></div>
+    <!-- Bootstrap Core JavaScript -->
+    <script src="~/Content/Admin/js/bootstrap.min.js"></script>
+    <!-- /Bootstrap Core JavaScript -->
+    <!-- morris JavaScript -->
+    <script src="~/Content/Admin/js/raphael-min.js"></script>
+    <script src="~/Content/Admin/js/morris.js"></script>
+    <script>
+        $(document).ready(function () {
+            //BOX BUTTON SHOW AND CLOSE
+            jQuery('.small-graph-box').hover(function () {
+                jQuery(this).find('.box-button').fadeIn('fast');
+            }, function () {
+                jQuery(this).find('.box-button').fadeOut('fast');
+            });
+            jQuery('.small-graph-box .box-close').click(function () {
+                jQuery(this).closest('.small-graph-box').fadeOut(200);
+                return false;
+            });
+
+            //CHARTS
+            function gd(year, day, month) {
+                return new Date(year, month - 1, day).getTime();
+            }
+
+            //graphArea2 = Morris.Area({
+            //    element: 'hero-area',
+            //    padding: 10,
+            //    behaveLikeLine: true,
+            //    gridEnabled: false,
+            //    gridLineColor: '#dddddd',
+            //    axes: true,
+            //    resize: true,
+            //    smooth: true,
+            //    pointSize: 0,
+            //    lineWidth: 0,
+            //    fillOpacity: 0.85,
+            //    data: [
+            //        { period: '2014 Q1', iphone: 2668, ipad: null, itouch: 2649 },
+            //        { period: '2014 Q2', iphone: 15780, ipad: 13799, itouch: 12051 },
+            //        { period: '2014 Q3', iphone: 12920, ipad: 10975, itouch: 9910 },
+            //        { period: '2014 Q4', iphone: 8770, ipad: 6600, itouch: 6695 },
+            //        { period: '2015 Q1', iphone: 10820, ipad: 10924, itouch: 12300 },
+            //        { period: '2015 Q2', iphone: 9680, ipad: 9010, itouch: 7891 },
+            //        { period: '2015 Q3', iphone: 4830, ipad: 3805, itouch: 1598 },
+            //        { period: '2015 Q4', iphone: 15083, ipad: 8977, itouch: 5185 },
+            //        { period: '2016 Q1', iphone: 10697, ipad: 4470, itouch: 2038 },
+            //        { period: '2016 Q2', iphone: 8442, ipad: 5723, itouch: 1801 }
+            //    ],
+            //    lineColors: ['#ff4a43', '#a2d200', '#22beef'],
+            //    xkey: 'period',
+            //    redraw: true,
+            //    ykeys: ['iphone', 'ipad', 'itouch'],
+            //    labels: ['All Visitors', 'Returning Visitors', 'Unique Visitors'],
+            //    pointSize: 2,
+            //    hideHover: 'auto',
+            //    resize: true
+            //});
+
+
+        });
+    </script>
+
+</body>
+</html>

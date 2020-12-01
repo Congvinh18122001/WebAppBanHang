@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="09b884a2e9484aea9e794196adb79283" Name="Diagram1" ZoomLevel="67">
+        <EntityTypeShape EntityType="DBBanHangModel.BinhLuan" Width="1.5" PointX="5.25" PointY="3.875" />
+        <EntityTypeShape EntityType="DBBanHangModel.ChiTietDonDatHang" Width="1.5" PointX="8.25" PointY="4.625" />
+        <EntityTypeShape EntityType="DBBanHangModel.ChiTietPhieuNhap" Width="1.5" PointX="5.25" PointY="7.25" />
+        <EntityTypeShape EntityType="DBBanHangModel.DonDatHang" Width="1.5" PointX="6" PointY="19.5" />
+        <EntityTypeShape EntityType="DBBanHangModel.KhachHang" Width="1.5" PointX="3.75" PointY="19.625" />
+        <EntityTypeShape EntityType="DBBanHangModel.LoaiSanPham" Width="1.5" PointX="0.75" PointY="1.625" />
+        <EntityTypeShape EntityType="DBBanHangModel.LoaiThanhVien" Width="1.5" PointX="0.75" PointY="16" />
+        <EntityTypeShape EntityType="DBBanHangModel.LoaiThanhVien_Quyen" Width="1.5" PointX="6" PointY="16" />
+        <EntityTypeShape EntityType="DBBanHangModel.NhaCungCap" Width="1.5" PointX="0.75" PointY="4.625" />
+        <EntityTypeShape EntityType="DBBanHangModel.NhaSanXuat" Width="1.5" PointX="0.75" PointY="8.375" />
+        <EntityTypeShape EntityType="DBBanHangModel.PhieuNhap" Width="1.5" PointX="3" PointY="11.875" />
+        <EntityTypeShape EntityType="DBBanHangModel.Quyen" Width="1.5" PointX="3.75" PointY="23.125" />
+        <EntityTypeShape EntityType="DBBanHangModel.SanPham" Width="1.5" PointX="3" PointY="2.875" />
+        <EntityTypeShape EntityType="DBBanHangModel.Table" Width="1.5" PointX="2.75" PointY="0.75" />
+        <EntityTypeShape EntityType="DBBanHangModel.ThanhVien" Width="1.5" PointX="3" PointY="15.25" />
+        <AssociationConnector Association="DBBanHangModel.FK_BinhLuan_SanPham" />
+        <AssociationConnector Association="DBBanHangModel.FK_BinhLuan_ThanhVien" />
+        <AssociationConnector Association="DBBanHangModel.FK_ChiTietDonDatHang_DonDatHang" />
+        <AssociationConnector Association="DBBanHangModel.FK_ChiTietDonDatHang_SanPham" />
+        <AssociationConnector Association="DBBanHangModel.FK_ChiTietPhieuNhap_PhieuNhap" />
+        <AssociationConnector Association="DBBanHangModel.FK_ChiTietPhieuNhap_SanPham" />
+        <AssociationConnector Association="DBBanHangModel.FK_DonDatHang_KhachHang" />
+        <AssociationConnector Association="DBBanHangModel.FK_KhachHang_ToTable" />
+        <AssociationConnector Association="DBBanHangModel.FK_SanPham_ToTable_2" />
+        <AssociationConnector Association="DBBanHangModel.FK_LoaiThanhVien_Quyen_ToTable_1" />
+        <AssociationConnector Association="DBBanHangModel.FK_ThanhVien_ToTable" />
+        <AssociationConnector Association="DBBanHangModel.FK_LoaiThanhVien_Quyen_ToTable" />
+        <AssociationConnector Association="DBBanHangModel.FK_PhieuNhap_ToTable" />
+        <AssociationConnector Association="DBBanHangModel.FK_SanPham_ToTable" />
+        <AssociationConnector Association="DBBanHangModel.FK_SanPham_ToTable_1" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -1,0 +1,169 @@
+﻿@model WebBanHang.Models.SanPham
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayoutPage.cshtml";
+}
+
+<h2>Bạn có Chắc chán muốn xóa sản phẩm này không ???</h2>
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.TenSP)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TenSP)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DonGia)
+        </dt>
+
+        <dd>
+            @string.Format(new System.Globalization.CultureInfo("vi-VN"), "{0:#,##0.00}", Model.DonGia) VND
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NgayCapNhap)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NgayCapNhap)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CauHinh)
+        </dt>
+
+        <dd>
+            @Html.Raw(Model.CauHinh)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MoTa)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MoTa)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.HinhAnh)
+        </dt>
+
+        <dd>
+            <img width="175px" height="175px" src="@Model.HinhAnh" />
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SoLuongTon)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SoLuongTon)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LuotXem)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LuotXem)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LuotBinhChon)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LuotBinhChon)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LuotBinhLuan)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LuotBinhLuan)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SoLanMua)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SoLanMua)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Moi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Moi)
+        </dd>
+
+        <dt>
+            Xóa
+        </dt>
+
+        <dd>
+            @((Model.DaXoa==true)?"Đã xóa":"Chưa xóa")
+        </dd>
+        <dt></dt>
+        <dd>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Hình ảnh 1</th>
+                        <th>Hình ảnh 2</th>
+                        <th>Hình ảnh 3</th>
+                        <th>Hình ảnh 4</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><img width="70px" height="70px" src="@Model.HinhAnh1" /></td>
+                        <td><img width="70px" height="70px" src="@Model.HinhAnh2" /></td>
+                        <td><img width="70px" height="70px" src="@Model.HinhAnh3" /></td>
+                        <td><img width="70px" height="70px" src="@Model.HinhAnh4" /></td>
+                    </tr>
+                </tbody>
+            </table>
+        </dd>
+
+        <dt>
+            Loại sản phẩm
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LoaiSanPham.TenLoai)
+        </dd>
+
+        <dt>
+            Nhà cung cấp
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NhaCungCap.TenNCC)
+        </dd>
+
+        <dt>
+            Nhà sản xuất
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NhaSanXuat.TenNSX)
+        </dd>
+</dl>
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Chắc chắn xóa" class="btn btn-default" /> |
+            @Html.ActionLink("Danh sách sản phẩm", "Index")
+        </div>
+    }
+</div>

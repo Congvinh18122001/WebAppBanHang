@@ -1,0 +1,18 @@
+﻿@using WebBanHang.Models;
+@model IEnumerable<SanPham>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Clience/Views/Shared/_LayoutPage.cshtml";
+}
+@{
+    IEnumerable<SanPham> ListNL = ViewBag.ListNL as IEnumerable<SanPham>;
+    IEnumerable<SanPham> ListNP = ViewBag.ListNP as IEnumerable<SanPham>;
+
+}
+<div class="container">
+    @Html.Partial("ProductStylePatial1", ListNP)
+    @Html.Partial("ProductStylePatial2", ListNL)
+</div>
+
+<br/><br /><br /><br />
+

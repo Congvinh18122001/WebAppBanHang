@@ -1,0 +1,145 @@
+﻿@using WebBanHang.Models; 
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayoutPage.cshtml";
+}
+
+@{ 
+    List<SanPham> sanPhams = ViewBag.MaSP as List<SanPham>;
+    List<NhaCungCap> NhaCungCaps = ViewBag.MaNCC as List<NhaCungCap>;
+}
+
+
+
+        <style>
+            .trAppend {
+                display: none;
+            }
+        </style>
+        <h2>Quản lý nhập sản phẩm</h2>
+        <hr>
+       
+            @using (Html.BeginForm("ThemPhieuNhap", "AddPhieuNhap",FormMethod.Post,new { @class = "formPhieuNhap" })) { 
+            <div class="form-group">
+                <label class="control-label col-md-2">Nhà Cung cấp</label>
+                <div class="col-md-10">
+                    <select name="MaNCC" class="form-control">
+                        @foreach (var item in NhaCungCaps)
+                        {
+                            <option value="@item.MaNCC">@item.TenNCC</option>
+                            }
+                    </select>
+                </div>
+            </div>
+            <hr>
+            <input name="NgayNhap" value="@DateTime.Now" type="hidden">
+            <table class="table tblChiTietPhieuNhap">
+                <tbody>
+                    <tr class="trAppend">
+                        <td>
+                            <select name="" class="ddlSanPham form-control">
+                                @foreach (var item in sanPhams)
+                                {
+                                    <option value="@item.MaSP">@item.TenSP</option>
+                                }
+                            </select>
+                        </td>
+                        <td>
+                            <input name="" value="0" class="tbDonGia form-control">
+                        </td>
+                        <td>
+                            <input name="" value="0" class="tbSoLuong form-control">
+                        </td>
+                        <td><span style="width:34px;height:34px;border-radius:10px;" id="btnRemove" class="btn btn-danger">-</span></td>
+                    </tr>
+
+                    <tr class="trFirstChild" data-id="-1">
+                        <th>Sản phẩm</th>
+                        <th>Đơn giá</th>
+                        <th>Số lượng</th>
+                        <th></th>
+                    </tr>
+
+                </tbody>
+            </table>
+            <span style="width:34px;height:34px;border-radius:10px;" id="btnAdd" class="btn btn-success">+</span>
+            <input class="btn btn-primary btnNhap" type="button" value="Nhập">
+            }
+
+
+        <hr>
+        <script>
+
+    $("#btnAdd").click(function () {
+        var id = $(".tblChiTietPhieuNhap").find("tr:last-child").attr("data-id");
+        i = parseInt(id) + 1;
+        var tdNoiDung = $(".trAppend").html();
+        var trNoiDung = "<tr class=\"trAppended\" data-id=\"" + i + "\">" + tdNoiDung + "</tr>";
+        $(".tblChiTietPhieuNhap").append(trNoiDung);
+        AddNameForInput();
+    });
+
+    $("table").delegate("#btnRemove", "click", function () {
+
+        $(this).closest(".trAppended").remove();
+        UpdateNameForInput();
+    });
+    function AddNameForInput() {
+        $(".trAppended").each(function () {
+            var i = $(this).attr("data-id");
+            var nameMaSP = "[" + i + "].MaSP";
+            var nameDonGia = "[" + i + "].DonGiaNhap";
+            var nameSoluong = "[" + i + "].SoLuongNhap";
+            $(this).find(".ddlSanPham").prop("name", nameMaSP);
+            $(this).find(".tbDonGia").prop("name", nameDonGia);
+            $(this).find(".tbSoLuong").prop("name", nameSoluong);
+
+        });
+    }
+    function UpdateNameForInput() {
+        var idLast = $(".tblChiTietPhieuNhap").find(".trFirstChild").attr("data-id");
+        i = parseInt(idLast) + 1;
+        $(".trAppended").each(function () {
+            ;
+            $(this).attr("data-id", i);
+            var nameMaSP = "[" + i + "].MaSP";
+            var nameDonGia = "[" + i + "].DonGiaNhap";
+            var nameSoluong = "[" + i + "].SoLuongNhap";
+            $(this).find(".ddlSanPham").prop("name", nameMaSP);
+            $(this).find(".tbDonGia").prop("name", nameDonGia);
+            $(this).find(".tbSoLuong").prop("name", nameSoluong);
+            i++;
+        });
+    }
+    $(".btnNhap").click(function () {
+
+
+        if (CheckSoLuong() && CheckDonGia()) {
+            $(".formPhieuNhap").submit();
+        }
+    });
+
+    function CheckDonGia() {
+        var isCheckForm = true;
+        $(".tbDonGia").each(function () {
+            var val = $(this).val();
+            if (isNaN(val) == true || parseInt(val) < 0) {
+                alert("Đơn giá Không hợ lệ ! ");
+                isCheckForm = false;
+            }
+        });
+        return isCheckForm;
+    }
+    function CheckSoLuong() {
+        var isCheckForm = true;
+        $(".tbSoLuong").each(function () {
+            var val = $(this).val();
+            if (isNaN(val) == true || parseInt(val) < 0) {
+                alert("Số lượng Không hợ lệ ! ");
+                isCheckForm = false;
+            }
+        });
+        return isCheckForm;
+    }
+        </script>
+

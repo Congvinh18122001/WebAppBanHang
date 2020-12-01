@@ -1,0 +1,191 @@
+﻿@using WebBanHang.Areas.Clience.Models;
+@model List<ItemCartViewModel>
+@{
+    ViewBag.Title = "ShowCart";
+    Layout = "~/Areas/Clience/Views/Shared/_ProductLayoutPage.cshtml";
+}
+<style>
+    span.order:hover {
+        background: #000;
+        cursor: pointer;
+    }
+
+    span.order {
+        background: #EF5F21;
+        padding: 10px 20px;
+        font-family: 'Lato', sans-serif;
+        font-size: 1em;
+        color: #fff;
+        text-decoration: none;
+        display: block;
+        font-weight: 600;
+        text-align: center;
+        margin: 3em 0;
+    }
+
+    span:hover, span:focus {
+        color: #23527c;
+        text-decoration: underline;
+    }
+
+    span:active, span:hover {
+        outline: 0;
+    }
+
+    #KH {
+        width: 30%;
+        margin-top: 20px;
+        margin-left: 35%;
+        background-color: whitesmoke;
+        padding-left: 3%;
+        padding-top: 20px;
+        text-align: right;
+        padding-right: 3%;
+    }
+
+    .lb {
+        float: left;
+    }
+    .KH-div {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 999;
+        background-color: rgba(25, 0, 0, 0.5);
+        display: none;
+    }
+</style>
+@if (Model == null)
+{
+    <h1 style="margin-left:20%;">Giỏ hàng Trống</h1>
+}
+else
+{
+    <div class="container">
+        <div class="check">
+            <h1><font style="        vertical-align: inherit;"><font style="vertical-align: inherit;">Túi mua sắm của tôi (@ViewBag.SoLuongs)</font></font></h1>
+            <div class="col-md-9 cart-items">
+                @foreach (var itemCart in Model)
+                {
+                    <div class="cart-header">
+                        <button type="button" class="close" aria-label="Close">
+                            @Ajax.ActionLink("X", "DeleteItemCart", new { MaSP = itemCart.MaSP },
+                           new AjaxOptions { HttpMethod = "GET", Confirm = "Xóa khỏi giỏ hàng ?", OnComplete = "location.reload()" })
+                        </button>
+                        <div class="cart-sec simpleCart_shelfItem">
+                            <div class="cart-item cyc">
+                                <img src="@itemCart.HinhAnh" class="img-responsive" alt="">
+                            </div>
+                            <div class="cart-item-info">
+                                <h3>
+                                    <a href="#"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">@itemCart.TenSP </font></font></a>
+                                    <span><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Mã sản phẩm: #@itemCart.MaSP</font></font></span>
+                                </h3>
+                                <ul class="qty">
+                                    <li><p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Dơn Giá: @itemCart.DonGia.ToString("#,##") VNĐ</font></font></p></li>
+                                    <li><p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Số lượng: @itemCart.SoLuong</font></font></p></li>
+                                    <li><p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Thành tiền: @itemCart.ThanhTien.ToString("#,##") VNĐ</font></font></p></li>
+                                </ul>
+                                <div class="delivery">
+                                    <span> <a href="@Url.Action("EditCart",new {MaSP = itemCart.MaSP })">Sửa</a> </span>
+                                    <div class="clearfix"></div>
+                                </div>
+                            </div>
+                            <div class="clearfix"></div>
+
+                        </div>
+                    </div>
+                }
+
+            </div>
+            <div class="col-md-3 cart-total">
+                <a class="continue" href="#"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Tiếp tục vào giỏ</font></font></a>
+                <div class="price-details">
+                    <h3><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Chi tiết giá</font></font></h3>
+                    <span><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Toàn bộ</font></font></span>
+                    <span class="total1"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">@ViewBag.TongTien</font></font></span>
+                    <span><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Giảm giá</font></font></span>
+                    <span class="total1"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">---</font></font></span>
+                    <span><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Phí vận chuyển</font></font></span>
+                    <span class="total1"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">~</font></font></span>
+                    <div class="clearfix"></div>
+                </div>
+                <ul class="total_price">
+                    <li class="last_price"> <h4><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">TOÀN BỘ</font></font></h4></li>
+                    <li class="last_price"><span><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">@ViewBag.TongTien</font></font></span></li>
+                    <div class="clearfix"> </div>
+                </ul>
+
+
+                <div class="clearfix"></div>
+
+                    <span id="order" class="order"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Đặt hàng</font></font></span>
+
+            </div>
+
+            <div class="clearfix"> </div>
+        </div>
+    </div>
+
+}
+<div class="KH-div">
+    @if (Session["DangNhap"] == null)
+    {
+    <div id="KH">
+        <button type="button" class="close" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+        <h1 style="text-align:center;margin-top:20px;margin-bottom:20px;"> Thông tin </h1>
+        @using (Ajax.BeginForm("Order", "Cart", new AjaxOptions { InsertionMode = InsertionMode.Replace, UpdateTargetId = "err" }))
+        {
+
+            <label class="lb">Họ và tên </label>
+            @Html.TextBox("TenKH");<br />
+            <label class="lb">Địa chỉ </label>
+            @Html.TextBox("DiaChi");<br />
+            <label class="lb">Số điện thoại</label>
+            @Html.TextBox("DienThoai");<br />
+            <label class="lb">Email</label>
+            @Html.TextBox("Email");<br />
+            <span style="color:red;float:right;" id="err"></span>
+            <input style="margin-top:20px;margin-bottom:20px;" type="submit" value="Đặt Hàng" />
+
+        }
+    </div>
+    }
+    else
+    {
+        WebBanHang.Models.ThanhVien thanhVien = Session["DangNhap"] as WebBanHang.Models.ThanhVien;
+<div id="KH">
+    <button type="button" class="close" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+    <h1 style="text-align:center;margin-top:20px;margin-bottom:20px;"> Thông tin </h1>
+
+    <label class="lb">Họ và tên </label>
+    @thanhVien.HoTen<br />
+    <label class="lb">Địa chỉ </label>
+    @thanhVien.DiaChi<br />
+    <label class="lb">Số điện thoại</label>
+    @thanhVien.DienThoai<br />
+    <label class="lb">Email</label>
+    @thanhVien.Email<br />
+
+    <a style="margin-top:20px;margin-bottom:20px;" class="btn btn-default" href="@Url.Action("Order","Cart")"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Đặt hàng</font></font></a>
+
+</div>
+
+    }
+
+</div>
+
+<script type="text/javascript">
+    $("#order").click(function () {
+        $(".KH-div").show();
+    });
+    $(".close").click(function () {
+        $(".KH-div").hide();
+    });
+</script>

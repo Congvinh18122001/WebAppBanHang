@@ -1,0 +1,49 @@
+﻿@model IEnumerable<WebBanHang.Models.ChiTietPhieuNhap>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayoutPage.cshtml";
+}
+
+<h2>Quản lý chi tiết phiếu nhập</h2>
+<hr />
+<table class="table table-bordered">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.DonGiaNHap)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SoLuongNhap)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PhieuNhap.MaPN)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SanPham.TenSP)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.DonGiaNHap)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SoLuongNhap)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PhieuNhap.MaPN)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SanPham.TenSP)
+        </td>
+        <td>
+            @Html.ActionLink("Sửa ", "Edit", new { id=item.MaChiTietPN }) |
+            @Html.ActionLink("Chi tiết", "Details", new { id=item.MaChiTietPN }) |
+            @Html.ActionLink("Xóa", "Delete", new { id=item.MaChiTietPN })
+        </td>
+    </tr>
+}
+
+</table>

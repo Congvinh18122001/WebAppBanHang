@@ -1,0 +1,29 @@
+﻿@using WebBanHang.Models;
+@model IEnumerable<SanPham>
+
+
+
+<div class="content-top">
+    <h1>NEW Phones</h1>
+    <div class="grid-in">
+        @foreach (var item in Model.Take(3))
+        {
+            <div class="col-md-4 grid-top">
+                <a href="@Url.Action("ProductDetail","Product",new { MaSP = item.MaSP })" class="b-link-stripe b-animate-go  thickbox">
+                    <img class="img-responsive" src="@item.HinhAnh" alt="">
+                    <div class="b-wrapper">
+                        <h3 class="b-animate b-from-left    b-delay03 ">
+                            <span>@item.TenSP <br /> </span>
+                        </h3>
+                    </div>
+                </a>
+
+
+                <p><a href="">Contrary to popular</a></p>
+            </div>
+        }
+
+        <div class="clearfix"> </div>
+    </div>
+    
+</div>

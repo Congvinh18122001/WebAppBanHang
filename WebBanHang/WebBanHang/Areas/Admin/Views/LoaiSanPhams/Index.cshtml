@@ -1,0 +1,46 @@
+﻿@model IEnumerable<WebBanHang.Models.LoaiSanPham>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayoutPage.cshtml";
+}
+
+<h2>Quản Lý Loại Sản Phẩm</h2>
+<hr />
+<p>
+    @Html.ActionLink("Thêm mới", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            Loại Hình
+        </th>
+        <th>
+            Icon
+        </th>
+        <th>
+            Bí danh
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.TenLoai)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Icon)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BiDanh)
+        </td>
+        <td>
+            @Html.ActionLink("Sửa", "Edit", new { id=item.MaLoaiSP }) |
+            @Html.ActionLink("Chi tiết", "Details", new { id=item.MaLoaiSP }) |
+            @Html.ActionLink("Xóa", "Delete", new { id=item.MaLoaiSP })
+        </td>
+    </tr>
+}
+
+</table>

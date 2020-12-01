@@ -1,0 +1,129 @@
+﻿@using WebBanHang.Areas.Clience.Models;
+@model ItemCartViewModel
+@{
+    ViewBag.Title = "EditCart";
+    Layout = "~/Areas/Clience/Views/Shared/_ProductLayoutPage.cshtml";
+
+}
+
+@{ 
+    List<ItemCartViewModel> itemCarts = ViewBag.Cart as List<ItemCartViewModel>;
+}
+
+<div class="container">
+    <div class="check">
+        <div class="col-md-9 cart-items">
+            @foreach (var itemCart in itemCarts)
+            {
+                if (itemCart.MaSP == Model.MaSP)
+                {
+                    using (Html.BeginForm("UpdateCart", "Cart"))
+                    {
+                        @Html.Hidden("MaSP", itemCart.MaSP)
+                        <div class="cart-header">
+                            <div class="close1"> </div>
+                            <div class="cart-sec simpleCart_shelfItem">
+                                <div class="cart-item cyc">
+                                    <img src="@itemCart.HinhAnh" class="img-responsive" alt="">
+                                </div>
+                                <div class="cart-item-info">
+                                    <h3>
+                                        <a href="#"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">@itemCart.TenSP </font></font></a>
+                                        <span><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Mã sản phẩm: #@itemCart.MaSP</font></font></span>
+                                    </h3>
+                                    <ul class="qty">
+                                        <li><p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Dơn Giá: @itemCart.DonGia.ToString("#,##") VNĐ</font></font></p></li>
+                                        <li><p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Số lượng: @Html.TextBox("SoLuong", itemCart.SoLuong)</font></font></p></li>
+                                        <span style="color:red;" id="err"></span>
+                                        <li><p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Thành tiền: @itemCart.ThanhTien.ToString("#,##") VNĐ</font></font></p></li>
+
+                                    </ul>
+
+                                    <div class="delivery">
+                                        <span> <input class="btn btn-primary" type="submit" value="Cập nhập" /> </span>
+                                        <div class="clearfix"></div>
+                                    </div>
+                                </div>
+                                <div class="clearfix"></div>
+
+                            </div>
+                        </div>
+                    }
+                }
+                else
+                {
+                    <div class="cart-header">
+                        <div class="close1"> </div>
+                        <div class="cart-sec simpleCart_shelfItem">
+                            <div class="cart-item cyc">
+                                <img src="@itemCart.HinhAnh" class="img-responsive" alt="">
+                            </div>
+                            <div class="cart-item-info">
+                                <h3>
+                                    <a href="#"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">@itemCart.TenSP </font></font></a>
+                                    <span><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Mã sản phẩm: #@itemCart.MaSP</font></font></span>
+                                </h3>
+                                <ul class="qty">
+                                    <li><p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Dơn Giá: @itemCart.DonGia.ToString("#,##") VNĐ</font></font></p></li>
+                                    <li><p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Số lượng: @itemCart.SoLuong</font></font></p></li>
+                                    <li><p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Thành tiền: @itemCart.ThanhTien.ToString("#,##") VNĐ</font></font></p></li>
+
+                                </ul>
+
+                                <div class="delivery">
+                                    <span> <a href="@Url.Action("EditCart",new {MaSP = itemCart.MaSP })">Sửa</a> </span>
+                                    <div class="clearfix"></div>
+                                </div>
+                            </div>
+                            <div class="clearfix"></div>
+
+                        </div>
+                    </div>
+
+                }
+            }
+
+        </div>
+        <div class="col-md-3 cart-total">
+            <a class="continue" href="#"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Tiếp tục vào giỏ</font></font></a>
+            <div class="price-details">
+                <h3><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Chi tiết giá</font></font></h3>
+                <span><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Toàn bộ</font></font></span>
+                <span class="total1"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">6200,00</font></font></span>
+                <span><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Giảm giá</font></font></span>
+                <span class="total1"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">---</font></font></span>
+                <span><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Phí vận chuyển</font></font></span>
+                <span class="total1"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">150,00</font></font></span>
+                <div class="clearfix"></div>
+            </div>
+            <ul class="total_price">
+                <li class="last_price"> <h4><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">TOÀN BỘ</font></font></h4></li>
+                <li class="last_price"><span><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">6350,00</font></font></span></li>
+                <div class="clearfix"> </div>
+            </ul>
+
+
+            <div class="clearfix"></div>
+            <a class="order" href="#"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Đặt hàng</font></font></a>
+            <div class="total-item">
+                <h3><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">TÙY CHỌN</font></font></h3>
+                <h4><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">COUPONS</font></font></h4>
+                <a class="cpns" href="#"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Áp dụng phiếu giảm giá</font></font></a>
+                <p><a href="#"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Đăng nhập</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> để sử dụng tài khoản - phiếu giảm giá được liên kết</font></font></p>
+            </div>
+        </div>
+
+        <div class="clearfix"> </div>
+    </div>
+</div>
+
+<script>
+    $("#SoLuong").keyup(function () {
+        var str = $("#SoLuong").val();
+        if (isNaN(str) == true || str < 0) {
+            $("#err").text("Số lượng không hợ lệ !");
+        } else {
+            $("#err").text("");
+        }
+    });
+</script>

@@ -1,0 +1,194 @@
+﻿@using WebBanHang.Models;
+@model SanPham
+@{
+    ViewBag.Title = "ProductDetail";
+    Layout = "~/Areas/Clience/Views/Shared/_ProductLayoutPage.cshtml";
+}
+
+@{
+    IEnumerable<SanPham> productList = ViewBag.SPBanChay as IEnumerable<SanPham>;
+}
+
+<style>
+    .title {
+        margin-left: 20%;
+    }
+
+</style>
+<div class="product">
+    <div class="container">
+        @Html.Action("CategoriesMenu", "Product")
+        <div class="col-md-9 product-price1">
+            <div class="col-md-5 single-top">
+                <div class="flexslider">
+
+                    <div class="flex-viewport" style="overflow: hidden; position: relative;">
+                        <ul class="slides" style="width: 1200%; transition-duration: 0s; transform: translate3d(-608px, 0px, 0px);">
+                            <li data-thumb="@Model.HinhAnh" class="clone" aria-hidden="true" style="width: 304px; float: left; display: block;">
+                                <img src="@Model.HinhAnh" draggable="false">
+                            </li>
+                            <li data-thumb="@Model.HinhAnh" style="width: 304px; float: left; display: block;" class="">
+                                <img src="@Model.HinhAnh" draggable="false">
+                            </li>
+                            <li data-thumb="@Model.HinhAnh1" style="width: 304px; float: left; display: block;" class="flex-active-slide">
+                                <img src="@Model.HinhAnh1" draggable="false">
+                            </li>
+                            <li data-thumb="@Model.HinhAnh2" style="width: 304px; float: left; display: block;" class="">
+                                <img src="@Model.HinhAnh2" draggable="false">
+                            </li>
+                            <li data-thumb="@Model.HinhAnh3" style="width: 304px; float: left; display: block;" class="">
+                                <img src="@Model.HinhAnh3" draggable="false">
+                            </li>
+                            <li data-thumb="@Model.HinhAnh4" style="width: 304px; float: left; display: block;" class="clone" aria-hidden="true">
+                                <img src="@Model.HinhAnh4" draggable="false">
+                            </li>
+                        </ul>
+                    </div>
+                    <ol class="flex-control-nav flex-control-thumbs">
+                        <li><img src="@Model.HinhAnh4" class="" draggable="false"></li>
+                        <li><img src="@Model.HinhAnh1" draggable="false" class="flex-active"></li>
+                        <li><img src="@Model.HinhAnh2" draggable="false" class=""></li>
+                        <li><img src="@Model.HinhAnh3" draggable="false" class=""></li>
+                    </ol><ul class="flex-direction-nav">
+                        <li class="flex-nav-prev"><a class="flex-prev" href="#">Previous</a></li>
+                        <li class="flex-nav-next"><a class="flex-next" href="#">Next</a></li>
+                    </ul>
+                </div>
+                <!-- FlexSlider -->
+                <script defer="" src="~/Content/Clience/js/jquery.flexslider.js"></script>
+                <link rel="stylesheet" href="~/Content/Clience/css/flexslider.css" type="text/css" media="screen">
+
+                <script>
+                    // Can also be used with $(document).ready()
+                    $(window).load(function () {
+                        $('.flexslider').flexslider({
+                            animation: "slide",
+                            controlNav: "thumbnails"
+                        });
+                    });
+                </script>
+            </div>
+            <div class="col-md-7 single-top-in simpleCart_shelfItem">
+                <div class="single-para ">
+                    <h4>@Model.TenSP</h4>
+                    <div class="star-on">
+                        <ul class="star-footer">
+                            <li><a href="#"><i> </i></a></li>
+                            <li><a href="#"><i> </i></a></li>
+                            <li><a href="#"><i> </i></a></li>
+                            <li><a href="#"><i> </i></a></li>
+                            <li><a href="#"><i> </i></a></li>
+                        </ul>
+                        <div class="review">
+                            <a href="#"> @Model.LuotBinhChon customer review </a>
+
+                        </div>
+                        <div class="clearfix"> </div>
+                    </div>
+
+                    <h5 class="item_price">@Model.DonGia VND</h5>
+                    <p>
+                        @Html.Raw(Model.CauHinh)
+                    </p>
+                    <p>
+                        @Model.MoTa
+                    </p>
+                    <a href="@Url.Action("AddToCart","Cart",new {MaSP = Model.MaSP,strUrl=Request.Url.ToString() })" class="add-cart item_add">ADD TO CART</a>
+
+                </div>
+            </div>
+            <div class="clearfix"> </div>
+            <!---->
+            <div class="cd-tabs is-ended">
+                <nav>
+                    <ul class="cd-tabs-navigation">
+                        <li><a data-content="fashion" href="#0">Description </a></li>
+                        <li><a data-content="cinema" href="#0">Addtional Informatioan</a></li>
+                        <li><a data-content="television" href="#0" class="selected ">Reviews (@Model.LuotBinhLuan)</a></li>
+
+                    </ul>
+                </nav>
+                <ul class="cd-tabs-content" style="height: auto;">
+                    <li data-content="fashion">
+                        <div class="facts">
+                            <p> There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined </p>
+                            <ul>
+                                <li>Research</li>
+                                <li>Design and Development</li>
+                                <li>Porting and Optimization</li>
+                                <li>System integration</li>
+                                <li>Verification, Validation and Testing</li>
+                                <li>Maintenance and Support</li>
+                            </ul>
+                        </div>
+
+                    </li>
+                    <li data-content="cinema">
+                        <div class="facts1">
+
+                            <div class="color">
+                                <p>Color</p>
+                                <span>Blue, Black, Red</span>
+                                <div class="clearfix"></div>
+                            </div>
+                            <div class="color">
+                                <p>Size</p>
+                                <span>S, M, L, XL</span>
+                                <div class="clearfix"></div>
+                            </div>
+
+                        </div>
+
+                    </li>
+                    <li data-content="television" class="selected">
+                        <div class="comments-top-top">
+                            <div class="top-comment-left">
+                                <img class="img-responsive" src="images/co.png" alt="">
+                            </div>
+                            <div class="top-comment-right">
+                                <h6><a href="#">Hendri</a> - September 3, 2014</h6>
+                                <ul class="star-footer">
+                                    <li><a href="#"><i> </i></a></li>
+                                    <li><a href="#"><i> </i></a></li>
+                                    <li><a href="#"><i> </i></a></li>
+                                    <li><a href="#"><i> </i></a></li>
+                                    <li><a href="#"><i> </i></a></li>
+                                </ul>
+                                <p>Wow nice!</p>
+                            </div>
+                            <div class="clearfix"> </div>
+                            <a class="add-re" href="#">ADD REVIEW</a>
+                        </div>
+
+                    </li>
+                    <div class="clearfix"></div>
+                </ul>
+            </div>
+            <div class=" bottom-product">
+                <h2> Sản phẩm bán chạy  </h2>
+                @if (productList != null)
+                {
+                    foreach (var item in productList)
+                    {
+                        <div class="col-md-4 bottom-cd simpleCart_shelfItem">
+                            <div class="product-at ">
+                                <a href="@Url.Action("ProductDetail","Product",new { MaSP = item.MaSP})">
+                                    <img class="img-responsive" src="@item.HinhAnh" alt="" />
+                                    <div class="pro-grid">
+                                        <span class="buy-in">Buy Now</span>
+                                    </div>
+                                </a>
+                             
+                            </div>
+                            <p class="tun">@item.MoTa</p>
+                            <a href="@Url.Action("ProductDetail","Product",new { MaSP = item.MaSP})" class="item_add"><p class="number item_price"><i> </i>@item.DonGia VND</p></a>
+                        </div>
+                    }
+                }
+
+
+                <div class="clearfix"> </div>
+            </div>
+        </div>
+    </div>
+</div>

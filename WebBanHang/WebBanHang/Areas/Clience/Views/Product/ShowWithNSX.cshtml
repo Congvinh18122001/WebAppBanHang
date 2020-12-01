@@ -1,0 +1,57 @@
+﻿@using WebBanHang.Models;
+@using PagedList.Mvc;
+@model PagedList.IPagedList<SanPham>
+@{
+    Layout = "~/Areas/Clience/Views/Shared/_ProductLayoutPage.cshtml";
+}
+
+
+<style>
+    .img-responsive {
+        height: 150px;
+        width: 150px;
+        margin-left: 20%;
+    }
+
+    .col-md-4 {
+        margin-top: 40px;
+    }
+
+    .title {
+        margin-left: 20%;
+    }
+</style>
+<div class="product">
+    <div class="container">
+        @Html.Action("CategoriesMenu", "Product")
+        <div class="col-md-9 product1">
+            <h1 class="title">@ViewBag.Title</h1>
+            <div class=" bottom-product">
+                @foreach (var product in Model)
+                {
+                    <div class="col-md-4 bottom-cd simpleCart_shelfItem">
+                        <div class="product-at ">
+                            <a href="@Url.Action("ProductDetail","Product",new { MaSP = product.MaSP })">
+                                <img class="img-responsive" src="@product.HinhAnh" alt="">
+                                <div class="pro-grid">
+                                    <span class="buy-in">Buy Now</span>
+                                </div>
+                            </a>
+                        </div>
+                        <p class="tun">@product.TenSP</p>
+                        <a href="@Url.Action("AddToCart","Cart",new {MaSP = product.MaSP,strUrl=Request.Url.ToString() })" class="item_add"><p class="number item_price"><i> </i>--@product.DonGia --<b>VND</b> </p></a>
+                    </div>
+                }
+            </div>
+        </div>
+        <div class="clearfix"> </div>
+        <nav class="in">
+            Trang @(Model.PageCount<Model.PageNumber?0:Model.PageNumber)/@Model.PageCount
+            @Html.PagedListPager(Model, Page => Url.Action("ShowWithNSX", new { Page = Page, MaLoaiSP = ViewBag.MaLoaiSP, MaNSX = ViewBag.MaNSX }))
+        </nav>
+    </div>
+
+</div>
+
+
+

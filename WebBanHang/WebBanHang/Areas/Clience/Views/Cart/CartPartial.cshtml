@@ -1,0 +1,13 @@
+﻿
+<div class="cart box_1">
+    <a href="@Url.Action("ShowCart","Cart")">
+        <h3>
+            <div class="total">
+                <span >@(ViewBag.TongTien.ToString("#,##")) VNĐ</span> (<span >@ViewBag.SoLuongs</span> SP)
+            </div>
+            <img src="~/Content/Clience/images/cart.png" alt="">
+        </h3>
+    </a>
+    <p><a href="@Url.Action("ShowCart","Cart")" class="simpleCart_empty">Giỏ hàng</a></p>
+
+</div>

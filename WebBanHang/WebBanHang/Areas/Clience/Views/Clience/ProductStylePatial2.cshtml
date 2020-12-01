@@ -1,0 +1,68 @@
+﻿@using WebBanHang.Models;
+@model IEnumerable<SanPham>
+<style>
+  
+        .text-font-size-10{
+                              font-size:10pt;
+                          }
+    .text-font-size-6 {
+        font-size: 6pt;
+    }
+    .text-font-size-8 {
+        font-size: 8pt;
+    }
+    
+</style>
+    <div class="content-top-bottom">
+        <h2>New Laptop</h2>
+        <div class="col-md-6 men">
+            <a href="@Url.Action("ProductDetail","Product",new { MaSP = @Model.ElementAt(0).MaSP })" class="b-link-stripe b-animate-go  thickbox">
+                <img class="img-responsive" src="@Model.ElementAt(0).HinhAnh" alt="">
+                <div class="b-wrapper">
+                    <h3 class="b-animate b-from-top top-in text-font-size-8  b-delay03 ">
+                        <span  >@Html.Raw(Model.ElementAt(0).CauHinh)</span>
+                    </h3>
+                </div>
+            </a>
+
+
+        </div>
+        <div class="col-md-6">
+            <div class="col-md1 ">
+                <a href="@Url.Action("ProductDetail","Product",new { MaSP = @Model.ElementAt(1).MaSP })" class="b-link-stripe b-animate-go  thickbox">
+                    <img class="img-responsive" src="@Model.ElementAt(1).HinhAnh" alt="">
+                    <div class="b-wrapper">
+                        <h3 class="b-animate b-from-top top-in text-font-size-8  b-delay03 ">
+                            <span>@Html.Raw(Model.ElementAt(1).CauHinh)</span>
+                        </h3>
+                    </div>
+                </a>
+
+            </div>
+            <div class="col-md2">
+                <div class="col-md-6 men1">
+                    <a href="@Url.Action("ProductDetail","Product",new { MaSP = @Model.ElementAt(2).MaSP })" class="b-link-stripe b-animate-go  thickbox">
+                        <img class="img-responsive" src="@Model.ElementAt(2).HinhAnh" alt="">
+                        <div class="b-wrapper">
+                            <h3 class="b-animate b-from-top top-in  text-font-size-6 b-delay03 ">
+                                <span>@Html.Raw(Model.ElementAt(2).CauHinh)</span>
+                            </h3>
+                        </div>
+                    </a>
+
+                </div>
+                <div class="col-md-6 men2">
+                    <a href="@Url.Action("ProductDetail","Product",new { MaSP = @Model.ElementAt(3).MaSP })" class="b-link-stripe b-animate-go  thickbox">
+                        <img class="img-responsive" src="@Model.ElementAt(3).HinhAnh" alt="">
+                        <div class="b-wrapper">
+                            <h3 class="b-animate b-from-top top-in text-font-size-6  b-delay03 ">
+                                <span>@Html.Raw(Model.ElementAt(3).CauHinh)</span>
+                            </h3>
+                        </div>
+                    </a>
+
+                </div>
+                <div class="clearfix"> </div>
+            </div>
+        </div>
+    </div>
